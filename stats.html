@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stats — BBBA</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-wrap">
+        <div class="logo-icon">BBBA</div>
+        <div class="logo-text">
+          <span class="logo-abbr">BBBA</span>
+          <span class="logo-sub">Boston Bengali Basketball</span>
+        </div>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html"     class="nav-link">About</a>
+        <a href="schedule.html"  class="nav-link">Schedule</a>
+        <a href="standings.html" class="nav-link">Standings</a>
+        <a href="teams.html"     class="nav-link">Teams</a>
+        <a href="stats.html"     class="nav-link">Stats</a>
+        <a href="rules.html"     class="nav-link">Rules</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <div class="page-hero">
+      <h1 class="page-title">Stats &amp; <span>Box Scores</span></h1>
+      <p class="page-subtitle">Season <span class="league-season"></span> &mdash; Leaders, totals &amp; game-by-game box scores</p>
+    </div>
+
+    <div id="stats-container"></div>
+  </main>
+
+  <footer class="site-footer">
+    <strong class="league-name"></strong> &nbsp;·&nbsp; Season <span class="league-season"></span>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,673 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap');
+
+/* ─── Variables ─────────────────────────────────────────────────────────────── */
+:root {
+    --green:       #1a7a3c;
+    --green-dark:  #135c2c;
+    --green-light: #e8f5ed;
+    --red:         #c0272d;
+    --red-dark:    #8f1a1f;
+    --red-light:   #fdecea;
+    --cream:       #fdf8f0;
+    --ink:         #1a1a1a;
+    --ink-soft:    #444;
+    --muted:       #888;
+    --border:      #ddd;
+    --card-bg:     #ffffff;
+    --shadow:      0 2px 12px rgba(0,0,0,0.08);
+    --radius:      12px;
+    --nav-h:       64px;
+}
+
+/* ─── Reset ──────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ─── Header & Nav ───────────────────────────────────────────────────────────── */
+.site-header {
+    background: var(--green-dark);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: var(--nav-h);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.logo-abbr {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.logo-sub {
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-link {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.75);
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background 0.15s, color 0.15s;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+}
+
+.nav-link.active {
+    background: var(--red);
+    color: #fff;
+}
+
+/* ─── Page Wrapper ───────────────────────────────────────────────────────────── */
+.page-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    flex: 1;
+    width: 100%;
+}
+
+.page-hero {
+    margin-bottom: 36px;
+}
+
+.page-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    color: var(--green-dark);
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.page-title span {
+    color: var(--red);
+}
+
+.page-subtitle {
+    font-size: 15px;
+    color: var(--muted);
+    margin-top: 6px;
+    font-weight: 600;
+}
+
+.section-subheading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--green-dark);
+    letter-spacing: 1.5px;
+    margin: 36px 0 16px;
+}
+
+.section-subheading:first-child { margin-top: 0; }
+
+/* ─── Footer ─────────────────────────────────────────────────────────────────── */
+.site-footer {
+    background: var(--green-dark);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 20px 24px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.site-footer strong {
+    color: rgba(255,255,255,0.85);
+}
+
+/* ─── About Page ─────────────────────────────────────────────────────────────── */
+.about-hero {
+    background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60%, var(--red-dark) 100%);
+    border-radius: var(--radius);
+    padding: 48px 40px;
+    color: #fff;
+    margin-bottom: 36px;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero::before {
+    content: "🏀";
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 96px;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.about-hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.about-hero-tagline {
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 0.85;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.about-hero-text {
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.9;
+    max-width: 640px;
+}
+
+.quick-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 36px;
+}
+
+.quick-stat {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 24px 16px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--green);
+}
+
+.quick-stat:nth-child(even) {
+    border-top-color: var(--red);
+}
+
+.qs-num {
+    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--green-dark);
+    line-height: 1;
+}
+
+.qs-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+/* ─── Cards & Shared ─────────────────────────────────────────────────────────── */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 28px;
+    margin-bottom: 16px;
+}
+
+.empty-state {
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.back-link {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 24px;
+    transition: color 0.15s;
+}
+
+.back-link:hover { color: var(--green-dark); }
+
+/* ─── Schedule ───────────────────────────────────────────────────────────────── */
+.game-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.game-card.upcoming {
+    border-left: 4px solid var(--border);
+    opacity: 0.85;
+}
+
+.game-card.completed {
+    border-left: 4px solid var(--green);
+}
+
+.game-date {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+    min-width: 100px;
+    letter-spacing: 0.3px;
+}
+
+.game-matchup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.team-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink-soft);
+}
+
+.team-name.winner {
+    color: var(--green-dark);
+}
+
+.score-block {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+}
+
+.score-win  { color: var(--green-dark); }
+.score-loss { color: var(--muted); }
+.score-sep  { color: var(--border); font-size: 20px; }
+
+.vs-badge {
+    background: var(--green-light);
+    color: var(--green-dark);
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+.box-score-link {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--red);
+    white-space: nowrap;
+    transition: color 0.15s;
+    margin-left: auto;
+}
+
+.box-score-link:hover { color: var(--red-dark); }
+
+/* ─── Standings ──────────────────────────────────────────────────────────────── */
+.standings-wrap {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.standings-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.standings-table thead {
+    background: var(--green-dark);
+    color: #fff;
+}
+
+.standings-table th {
+    padding: 14px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.standings-table th:not(:first-child):not(.team-col) { text-align: center; }
+
+.standings-table td {
+    padding: 14px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+}
+
+.standings-table td:not(:first-child):not(.team-col) { text-align: center; }
+
+.standings-table tbody tr:last-child td { border-bottom: none; }
+
+.standings-table tbody tr:hover { background: var(--green-light); }
+
+.standings-table .leader-row { background: #fffbe6; }
+.standings-table .leader-row:hover { background: #fff5c2; }
+
+.rank { color: var(--muted); font-size: 13px; width: 32px; }
+.team-col { font-weight: 800; }
+.pos-diff { color: var(--green); font-weight: 800; }
+.neg-diff { color: var(--red);   font-weight: 800; }
+
+.standings-note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+/* ─── Teams ──────────────────────────────────────────────────────────────────── */
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.team-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.team-card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 1.5px;
+    background: var(--green-dark);
+    color: #fff;
+    padding: 16px 20px;
+}
+
+.team-card:nth-child(even) .team-card-title {
+    background: var(--red-dark);
+}
+
+.roster-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.roster-table thead tr {
+    background: var(--green-light);
+}
+
+.roster-table th {
+    padding: 10px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    text-align: left;
+}
+
+.roster-table th:not(:first-child) { text-align: center; }
+
+.roster-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+    text-align: left;
+}
+
+.roster-table td:not(:first-child) { text-align: center; color: var(--ink-soft); }
+
+.roster-table tbody tr:last-child td { border-bottom: none; }
+.roster-table tbody tr:hover { background: #f9f9f9; }
+
+.player-name { font-weight: 700; }
+
+.team-card .empty-state { padding: 24px; text-align: left; }
+
+.unassigned-card { grid-column: 1 / -1; }
+
+.unassigned-title {
+    background: var(--muted) !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.unassigned-count {
+    background: rgba(255,255,255,0.25);
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 99px;
+}
+
+/* ─── Stats ──────────────────────────────────────────────────────────────────── */
+.leaders-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.leaders-block {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.leaders-block.full-width {
+    grid-column: 1 / -1;
+}
+
+.leaders-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    background: var(--red-dark);
+    color: #fff;
+    padding: 12px 16px;
+}
+
+.leaders-block:first-child .leaders-title { background: var(--green-dark); }
+.leaders-block:nth-child(2) .leaders-title { background: var(--green); }
+
+.leader-row { background: #fffbe6 !important; }
+.leader-row .player-name::after {
+    content: " 👑";
+    font-size: 11px;
+}
+
+/* Box score */
+.box-score-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    gap: 16px;
+}
+
+.bs-team {
+    text-align: center;
+    flex: 1;
+}
+
+.bs-team-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.bs-score {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px;
+    color: var(--ink);
+    line-height: 1;
+}
+
+.bs-winner .bs-score { color: var(--green-dark); }
+.bs-winner .bs-team-name { color: var(--green-dark); }
+
+.bs-date {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+    text-align: center;
+}
+
+.box-team-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: var(--green-dark);
+    margin: 24px 0 8px;
+}
+
+.box-score-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-score-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.box-score-item:last-child { border-bottom: none; }
+.box-score-item:hover { background: var(--green-light); }
+
+.bsi-date { color: var(--muted); font-size: 13px; min-width: 100px; }
+.bsi-matchup { flex: 1; }
+.bsi-winner { color: var(--green-dark); font-weight: 800; }
+.bsi-sep { color: var(--muted); margin: 0 6px; }
+.bsi-arrow { color: var(--red); font-weight: 700; }
+
+/* ─── Rules ──────────────────────────────────────────────────────────────────── */
+.rules-section {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 32px;
+    margin-bottom: 20px;
+}
+
+.rules-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    color: var(--green-dark);
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--green-light);
+}
+
+.rules-section p, .rules-section li {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+}
+
+.rules-section ul, .rules-section ol {
+    padding-left: 20px;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .quick-stats { grid-template-columns: repeat(2, 1fr); }
+    .teams-grid  { grid-template-columns: 1fr; }
+    .leaders-grid { grid-template-columns: 1fr; }
+    .about-hero { padding: 32px 24px; }
+    .about-hero::before { display: none; }
+    .about-hero-title { font-size: 36px; }
+    .page-title { font-size: 40px; }
+    .site-nav { gap: 2px; }
+    .nav-link { font-size: 12px; padding: 5px 8px; }
+    .logo-text { display: none; }
+    .box-score-header { flex-direction: column; }
+}
