@@ -643,6 +643,35 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (linkPage === page) link.classList.add("active");
     });
 
+    // Hamburger menu toggle
+    const hamburgerBtn = document.getElementById("hamburger-btn");
+    const siteNav      = document.getElementById("site-nav");
+    if (hamburgerBtn && siteNav) {
+        hamburgerBtn.addEventListener("click", () => {
+            const isOpen = siteNav.classList.toggle("nav-open");
+            hamburgerBtn.classList.toggle("is-active", isOpen);
+            hamburgerBtn.setAttribute("aria-expanded", isOpen);
+        });
+
+        // Close menu when a nav link is tapped
+        siteNav.querySelectorAll(".nav-link").forEach(link => {
+            link.addEventListener("click", () => {
+                siteNav.classList.remove("nav-open");
+                hamburgerBtn.classList.remove("is-active");
+                hamburgerBtn.setAttribute("aria-expanded", false);
+            });
+        });
+
+        // Close menu when tapping outside the header
+        document.addEventListener("click", (e) => {
+            if (!e.target.closest(".site-header")) {
+                siteNav.classList.remove("nav-open");
+                hamburgerBtn.classList.remove("is-active");
+                hamburgerBtn.setAttribute("aria-expanded", false);
+            }
+        });
+    }
+
     // Populate season labels
     document.querySelectorAll(".current-season-label").forEach(el => el.textContent = activeSeason);
 
