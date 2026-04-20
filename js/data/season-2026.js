@@ -18,7 +18,7 @@ var seasons = {
         {id: "team-a", name: "The Cuties", playerIds: ["p2", "p12", "p7", "p21", "p4", "p17"]},
         {id: "team-b", name: "Team B", playerIds: ["p8", "p1", "p13", "p19", "p16"]},
         {id: "team-c", name: "Team C", playerIds: ["p3", "p18", "p20", "p11", "p10"]},
-        {id: "team-d", name: "Team D", playerIds: ["p6", "p14", "p9", "p15", "p5"]},
+        {id: "team-d", name: "Team D", playerIds: ["p6", "p14", "p9", "p15", "p5", "p22"]},
     ],
     games: [
       // --- Matchup cycle 1 ---
