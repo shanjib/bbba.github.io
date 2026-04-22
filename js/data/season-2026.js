@@ -15,7 +15,7 @@ var seasons = {
   ...( typeof seasons !== "undefined" ? seasons : {} ),
   "2026": {
     teams: [
-        {id: "team-a", name: "The Cuties", playerIds: ["p2", "p12", "p7", "p21", "p19"]},
+        {id: "team-a", name: "The Cuties", playerIds: ["p2", "p12", "p7", "p21", "p19", "p24"]},
         {id: "team-b", name: "Team Igoudala", playerIds: ["p8", "p1", "p13", "p16", "p17", "p4"]},
         {id: "team-c", name: "Team C", playerIds: ["p3", "p18", "p20", "p11", "p10", "p23"]},
         {id: "team-d", name: "Team D", playerIds: ["p6", "p14", "p9", "p15", "p5", "p22"]},

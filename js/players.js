@@ -25,4 +25,5 @@ const players = [
     {id: "p21", name: "Zamie Abdullah"},
     {id: "p22", name: "Arnav Roy"},
     {id: "p23", name: "Rakin Chowdhury"},
+    {id: "p24", name: "Shafeen Hasan"},
 ];
